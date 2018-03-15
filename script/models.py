@@ -52,7 +52,7 @@ def model_2_2(input_shape):
     model.add(Dense(1))
 #    sgd = SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True)
     # compile model
-    model.compile(loss='mean_squared_error', optimizer='adam')
+    model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
     return model 
 
 def model_3_1(input_shape):
@@ -72,9 +72,9 @@ def model_3_1(input_shape):
     # create model
 #    model.add(Dense(13, activation='relu'))
     model.add(Dense(1))
-    sgd = SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True)
+#    sgd = SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True)
     # compile model
-    model.compile(loss='mean_squared_error', optimizer=sgd)
+    model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
 #    model.compile(loss='mean_squared_error', optimizer='adam')
 
     return model 
@@ -102,7 +102,7 @@ def model_4_1(input_shape):
 #    sgd = SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True)
     # compile model
 #    model.compile(loss='mean_squared_error', optimizer='adam')
-    model.compile(loss='mean_squared_error', optimizer='adam')
+    model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
 
     return model 
 
