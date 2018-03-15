@@ -157,8 +157,17 @@ x_test, y_test = unified_data(imgs_all, labels_, num_data[2])
     
 input_shape = (x_train.shape[1:])
 
-get_model = models.model_2_1
+get_model = models.model_4_1
 
 model = get_model(input_shape)
-model.fit(x_train, y_train, batch_size=6, epochs=1, validation_data=(x_CV, y_CV))
-mm = model.predict(x_test)
+model.fit(x_train, y_train, batch_size=16, epochs=100, validation_data=(x_CV, y_CV))
+train_predict = model.predict(x_train)
+CV_predict = model.predict(x_CV)
+y_predict = model.predict(x_test)
+train_diff = np.ravel(train_predict)-y_train
+CV_diff = np.ravel(CV_predict)-y_CV
+
+print('train mean:{0},std:{1}'.format(train_diff.mean(),train_diff.std()))
+print('CV mean:{0},std:{1}'.format(CV_diff.mean(),CV_diff.std()))
+
+
