@@ -30,7 +30,7 @@ def model_2_1(input_shape):
     model.add(Dense(1))
 #    sgd = SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True)
     # compile model
-    model.compile(loss='mean_squared_error', optimizer='adam')
+    model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
     return model 
 
 def model_2_2(input_shape):
