@@ -164,10 +164,13 @@ model.fit(x_train, y_train, batch_size=16, epochs=100, validation_data=(x_CV, y_
 train_predict = model.predict(x_train)
 CV_predict = model.predict(x_CV)
 y_predict = model.predict(x_test)
+
 train_diff = np.ravel(train_predict)-y_train
 CV_diff = np.ravel(CV_predict)-y_CV
+test_diff = np.ravel(y_predict) - y_test
 
 print('train mean:{0},std:{1}'.format(train_diff.mean(),train_diff.std()))
 print('CV mean:{0},std:{1}'.format(CV_diff.mean(),CV_diff.std()))
+print('test mean:{0},std:{1}'.format(test_diff.mean(),test_diff.std()))
 
 
