@@ -114,7 +114,7 @@ def unified_data(imgs_all, label_all, num):
     x = []
     y = []
     for i, j in imgs_all_sep.items():
-        for num in range(num):
+        for m in range(num):
             x.append(random.choice(j))
             y.append(i)
     return np.asarray(x), np.asarray(y)
@@ -135,9 +135,9 @@ size = []
 # half size
 img_size = 112
 # half amount 
-amount = 20
-stride = 5
-num_data = 100,20,20
+amount = 40
+stride = 3
+num_data = 140,40,40
 
 train_num_cat, test_num_cat = 100, 20
 
